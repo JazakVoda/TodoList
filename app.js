@@ -17,7 +17,7 @@
 		}
 	});
 	function generateList(){
-		document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Delete</th><th>Mark as Completed</th>';
+		document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Action</th>';
 
 		tasks.forEach(function(task, index){
 			const table = document.getElementById("myTable");
@@ -27,7 +27,6 @@
 		    const cell1 = row.insertCell(0);
 		    const cell2 = row.insertCell(1);
 		    const cell3 = row.insertCell(2);
-		    const cell4 = row.insertCell(3);
 
 		    //Delete Task
 		    const btn = document.createElement("BUTTON");
@@ -42,23 +41,30 @@
 			checked.addEventListener('click', function(){
 					table.rows[index + 1].classList.add('selected');
 					task.isCorect = true;
-					checked.setAttribute("hidden", "");
+					checked.style.display = 'none';
+					
 					saveTasks();
+					if(task.isCorect === true) {
+						btn.setAttribute("style", "display: block; margin-left: 10px;");
+					}
 			});
 			const e = document.createTextNode('\u2611');
 			checked.appendChild(e);
-
+			checked.style.color = 'blue';
+			if(task.isCorect === false){
+				btn.setAttribute('hidden', '');
+			}
 			//After deleteTask generate selected rows
 			if(task.isCorect === true){
 				table.rows[index + 1].classList.add('selected');
-				checked.setAttribute("hidden", "");
+				checked.setAttribute("style", "display: none;");
 			}            
 
 			//Push items from tasks in new row
 		    cell1.innerHTML = task.date;
 		    cell2.innerHTML = task.text;
 		    cell3.appendChild(btn);
-		    cell4.appendChild(checked); 
+		    cell3.appendChild(checked); 
 
 		    saveTasks();
 		});   
@@ -76,7 +82,8 @@
 		generateList();
 		saveTasks();
 	}
-
+	
+	//Get Date and Time
 	function getDate(){
 		var today = new Date();
 		var dd = today.getDate();
@@ -109,6 +116,9 @@
 	function getTasks(){
 		var str = localStorage.getItem("tasks")
 		tasks = JSON.parse(str);
+		if(!tasks){
+			tasks = [];
+		}
 	
 	}
 	getTasks();
