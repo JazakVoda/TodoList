@@ -1,0 +1,125 @@
+	
+	body {
+		background-image: url("http://pctechtips.org/apps/todo/img/Chicago-Wallpaper-3.jpg");
+	    min-height: 100vh;
+	    z-index: -10;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    color: white;
+	    font-size: 1.3rem;		    
+	}
+	.container{
+		padding: 20px;
+		margin: 20px;
+	}
+	input{
+		width: 30%;
+		height: 45px;
+		border: 1px solid #000;
+		margin-left: 32%;
+		margin-bottom: 5rem;
+		margin-top: 3px;
+		font-size: 22px;
+	}
+	#btn{
+		width: 80px;
+		height: 49px;
+		background-color: #1874CD;
+		cursor: pointer;
+		outline: none;
+		border: 1px solid #000;
+		color: #fff;	
+		font-weight: 900;
+		font-size: 20px;
+		padding-bottom: 5px;
+		padding-top: 4px;
+	}
+	#btn:active {
+		  background-color: #189ccd;
+		  box-shadow: 1px 1px #666;
+		  transform: translateY(2px);
+	}
+	#btn:hover{
+		background-color: #189ccd;
+		transition: background-color 1s;
+	}
+	li{
+		list-style: none;
+	}
+	table {
+	    border-collapse: collapse;
+	    width: 100%;
+	    border: 1px solid #000;
+	}
+	td, th {
+	    border: 1px solid #dddddd;
+	    text-align: center;
+	    padding: 8px;
+	    border: 1px solid #000;
+	}
+	.selected {
+	    background: #1874CD !important;
+	    color: #fff;
+	    text-decoration: line-through;
+    }
+    tr:nth-child(even) {
+    	background: #EEEEEE;
+    	opacity: .9;
+    	color: #000;
+    }
+    tr:nth-child(odd) {
+    	background: #e4e4e4;
+    	opacity: .9;
+    	color: #000;
+    }
+	td:nth-child(2) {
+    	text-align: left;
+    }
+    th:nth-child(1), td:nth-child(1){
+    	width: 110px;
+    }
+    th:nth-child(3), td:nth-child(3){
+    	width: 50px;
+    }
+    th:nth-child(4), td:nth-child(4){
+    	width: 50px;
+    }
+    td:nth-child(3) button {
+    	color: red;
+    	font-weight: 900;
+    	font-size: 30px;
+    	border: 0;
+    	cursor: pointer;
+    	background: none;
+    }
+    td:nth-child(3) button:hover {
+    	background-color: red;
+    	width: 70%;
+    	color: #fff;
+    	transition: background-color 1s;
+    	border-radius: 50%;
+    }
+    td:nth-child(4) button {
+    	color: #1874CD;
+    	font-weight: 900;
+    	font-size: 35px;
+    	border: 0;
+    	cursor: pointer;
+    	background: none;
+    }
+    td:nth-child(4) button:hover {
+    	background-color: #1874CD;
+    	width: 50%;
+    	color: #fff;
+    	transition: background-color 1s;
+    	border-radius: 50%;
+    }
+    .lead {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+		padding-bottom: 0px;
+		font-family: var(--righteous-font);
+		text-align: center;
+		font-size: 5.5rem;
+	}
