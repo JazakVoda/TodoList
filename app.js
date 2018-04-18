@@ -1,11 +1,25 @@
 
 	var tasks = [];
 
+	// Add button
 	document.getElementById('btn').addEventListener('click', function(){
+			tasksPush();
+	});
+
+	// Function for 'Enter'
+	function keyCode(event){
+		const enter = event.keyCode;
+		if(enter == 13){
+			tasksPush();
+		}
+	}
+
+	// Push new task in array of tasks
+	function tasksPush(){
 		const text = document.getElementById('text').value;
 		if(text == ''){
-			text.value = '';
-		}else{
+			text.value = alert('Write something!');
+		} else{
 			tasks.push({
 				id: Date.now(),
 				date: getDate(),
@@ -15,7 +29,8 @@
 			generateList();
 			reset();
 		}
-	});
+	}
+
 	function generateList(){
 		document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Action</th>';
 
@@ -39,21 +54,19 @@
 			//Blue color, task done!    
 			const checked = document.createElement('BUTTON');
 			checked.addEventListener('click', function(){
-					table.rows[index + 1].classList.add('selected');
-					task.isCorect = true;
-					checked.style.display = 'none';
-					
-					saveTasks();
-					if(task.isCorect === true) {
-						btn.setAttribute("style", "display: block; margin-left: 10px;");
-					}
+				table.rows[index + 1].classList.add('selected');
+				task.isCorect = true;
+				checked.style.display = 'none';
+				
+				if(task.isCorect === true) {
+					btn.setAttribute("style", "display: block;");
+				}
+				saveTasks();
 			});
 			const e = document.createTextNode('\u2611');
 			checked.appendChild(e);
 			checked.style.color = 'blue';
-			if(task.isCorect === false){
-				btn.setAttribute('hidden', '');
-			}
+			
 			//After deleteTask generate selected rows
 			if(task.isCorect === true){
 				table.rows[index + 1].classList.add('selected');
@@ -70,11 +83,13 @@
 		});   
 	}
 
+	// Reset input field
 	function reset(){
 		document.getElementById('text').value = '';
 
 	}
 
+	// Delete selected task
 	function deleteTask(id){
 		tasks = tasks.filter(function(task){
 			return task.id !== id;
@@ -92,10 +107,10 @@
   		var minutes = today.getMinutes();
 		var yyyy = today.getFullYear();
 
-		 var ampm = hours >= 12 ? 'pm' : 'am';
-		  hours = hours % 12;
-		  hours = hours ? hours : 12; // the hour '0' should be '12'
-		  minutes = minutes < 10 ? '0'+minutes : minutes;
+		var ampm = hours >= 12 ? 'pm' : 'am';
+		hours = hours % 12;
+		hours = hours ? hours : 12; // the hour '0' should be '12'
+		minutes = minutes < 10 ? '0'+minutes : minutes;
 
 		if(dd<10){
 		    dd='0'+dd;
@@ -107,12 +122,13 @@
 	}
 
 
-	//LocalStorage tasks
+	// LocalStorage tasks
 	function saveTasks(){
 		var str = JSON.stringify(tasks);
 		localStorage.setItem("tasks", str);
 	}
 
+	// Get tasks from LocalStorage
 	function getTasks(){
 		var str = localStorage.getItem("tasks")
 		tasks = JSON.parse(str);
