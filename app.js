@@ -103,11 +103,12 @@
 		var today = new Date();
 		var dd = today.getDate();
 		var mm = today.getMonth()+1;
-		var hours = today.getHours();
-  		var minutes = today.getMinutes();
 		var yyyy = today.getFullYear();
 
+		var hours = today.getHours();
+  		var minutes = today.getMinutes();
 		var ampm = hours >= 12 ? 'pm' : 'am';
+
 		hours = hours % 12;
 		hours = hours ? hours : 12; // the hour '0' should be '12'
 		minutes = minutes < 10 ? '0'+minutes : minutes;
@@ -124,13 +125,13 @@
 
 	// LocalStorage tasks
 	function saveTasks(){
-		var str = JSON.stringify(tasks);
+		const str = JSON.stringify(tasks);
 		localStorage.setItem("tasks", str);
 	}
 
 	// Get tasks from LocalStorage
 	function getTasks(){
-		var str = localStorage.getItem("tasks")
+		const str = localStorage.getItem("tasks")
 		tasks = JSON.parse(str);
 		if(!tasks){
 			tasks = [];
