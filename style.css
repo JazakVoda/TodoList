@@ -13,14 +13,22 @@
 		padding: 20px;
 		margin: 20px;
 	}
-	input{
+	#text{
 		width: 30%;
 		height: 45px;
 		border: 1px solid #000;
-		margin-left: 32%;
+		margin-left: 28%;
 		margin-bottom: 5rem;
 		margin-top: 3px;
 		font-size: 22px;
+	}
+	#date{
+		height: 45px;
+		width: 10%;
+		padding-top: 3px;
+		font-size: 18px;
+		border: 1px solid #000;
+		
 	}
 	#btn{
 		width: 80px;
@@ -60,13 +68,18 @@
 	}
 	.selected {
 	    background: #1874CD !important;
-	    color: #fff;
     }
+    .selected td:nth-child(1){
+		color: #000;
+	}
 	.selected td:nth-child(2){
 		text-decoration: line-through;
-		color: red;
+		color: #000;
 	}
-	.selected td:nth-child(3) button {
+	.selected td:nth-child(3){
+		color: #000;
+	}
+	.selected td:nth-child(4) button {
 		margin-left: 15px;
 	}
     tr:nth-child(even) {
@@ -81,24 +94,28 @@
     }
 	td:nth-child(2) {
     	text-align: left;
+    	width: 80%;
+    }
+    td:nth-child(3){
+    	min-width: 100px;
     }
     th:nth-child(1), td:nth-child(1){
     	width: 110px;
     }
-    th:nth-child(3), td:nth-child(3){
+    th:nth-child(4), td:nth-child(4){
     	width: 70px;
     }
-    th:nth-child(3){
+    th:nth-child(4){
     	border-bottom: 0;
     }
-    td:nth-child(3){
+    td:nth-child(4){
     	display: flex;
     	border-left: 0;
     	border-right: 0;
     	border-bottom: 0;
     	margin: 0 auto;
     }
-    td:nth-child(3) button {
+    td:nth-child(4) button {
     	color: red;
     	font-weight: 900;
     	font-size: 30px;
@@ -106,7 +123,7 @@
     	cursor: pointer;
     	background: none;
     }
-    td:nth-child(3) button:hover {
+    td:nth-child(4) button:hover {
     	background-color: #fff;
     	width: 55%;
     	color: red;
@@ -120,4 +137,10 @@
 		font-family: var(--righteous-font);
 		text-align: center;
 		font-size: 5.5rem;
+	}
+	.today td:nth-child(2){
+		color: red;
+	}
+	.past{
+		color: gray !important;
 	}
