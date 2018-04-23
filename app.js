@@ -53,7 +53,6 @@
 			const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 			const day = (dateTodo - dateNow) / _MS_PER_DAY;
 			//console.log(dateNow);
-			console.log(dateTodo);
 
 			if(day === 0){
 				table.rows[index + 1].classList.add('today');
