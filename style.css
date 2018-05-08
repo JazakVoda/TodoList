@@ -7,32 +7,33 @@
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	    color: white;
-	    font-size: 1.3rem;		    
+	    font-size: 1.3rem;	
+	    margin-bottom: 70px;	    
 	}
-	.container{
-		padding: 20px;
-		margin: 20px;
+	.title{
+		margin-left: 8%;
 	}
 	#text{
-		width: 30%;
+		width: 100%;
 		height: 45px;
 		border: 1px solid #000;
-		margin-left: 28%;
 		margin-bottom: 5rem;
 		margin-top: 3px;
 		font-size: 22px;
+		opacity: .8;
 	}
 	#date{
 		height: 45px;
-		width: 10%;
-		padding-top: 3px;
+		width: 80%;
 		font-size: 18px;
 		border: 1px solid #000;
-		
+		opacity: .8;
+		margin-top: 3px;
+		text-align: center;		
 	}
 	#btn{
 		width: 80px;
-		height: 49px;
+		height: 45px;
 		background-color: #1874CD;
 		cursor: pointer;
 		outline: none;
@@ -41,7 +42,9 @@
 		font-weight: 900;
 		font-size: 20px;
 		padding-bottom: 5px;
-		padding-top: 4px;
+		padding-top: 5px;
+		margin-top: 3px;
+		margin-left: -45px;
 	}
 	#btn:active {
 		  background-color: #189ccd;
@@ -51,6 +54,23 @@
 	#btn:hover{
 		background-color: #189ccd;
 		transition: background-color 1s;
+	}
+	@media only screen and (max-width: 768px){
+		.title{
+			margin-left: 0;
+		}
+		#text{
+			margin-bottom: 20px;
+		}
+		#btn{
+			margin-bottom: 70px;
+			margin-top: 20px;
+			width: 100%;
+			margin-left: 0;
+		}
+		#date{
+			width: 100%;
+		}
 	}
 	li{
 		list-style: none;
@@ -79,9 +99,6 @@
 	.selected td:nth-child(3){
 		color: #000;
 	}
-	.selected td:nth-child(4) button {
-		margin-left: 15px;
-	}
     tr:nth-child(even) {
     	background: #EEEEEE;
     	opacity: .9;
@@ -94,7 +111,7 @@
     }
 	td:nth-child(2) {
     	text-align: left;
-    	width: 80%;
+    	width: 65%;
     }
     td:nth-child(3){
     	min-width: 100px;
@@ -103,7 +120,7 @@
     	width: 110px;
     }
     th:nth-child(4), td:nth-child(4){
-    	width: 70px;
+    	width: 120px;
     }
     th:nth-child(4){
     	border-bottom: 0;
@@ -116,12 +133,13 @@
     	margin: 0 auto;
     }
     td:nth-child(4) button {
-    	color: red;
     	font-weight: 900;
     	font-size: 30px;
+    	text-align: center;
     	border: 0;
     	cursor: pointer;
     	background: none;
+    	margin-top: 5px;
     }
     td:nth-child(4) button:hover {
     	background-color: #fff;
@@ -138,9 +156,68 @@
 		text-align: center;
 		font-size: 5.5rem;
 	}
-	.today td:nth-child(2){
+	.today td:nth-child(1), .today td:nth-child(2), .today td:nth-child(3){
 		color: red;
 	}
 	.past{
 		color: gray !important;
+	}
+	.undo{
+		background: #ffa500 !important;
+	}
+
+	@media (max-width: 768px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		td, th { 
+ 		 	padding: 6px; 
+ 	 		text-align: left; 
+		}
+		td:nth-child(1) {
+    		display: inline;
+    	}
+    	td:nth-child(4) {
+    		margin-left: -60px;
+    		display: inline;    	
+    	}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			border: none; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%;  
+		}
+		td:nth-child(4) button:hover {
+	    	width: 13%;
+	    	padding: 0;
+    	}
+    	td:nth-child(4) button {
+    		margin-bottom: 10px;
+    	}
+
+		td:nth-of-type(1):before { content: "Date/Time:"; }
+		td:nth-of-type(2):before { content: "Description:"; }
+		td:nth-of-type(3):before { content: "Date:"; }
+
+	    .today td:nth-child(1), .today td:nth-child(3){
+			color: #000;
+		}
 	}

@@ -33,8 +33,26 @@
 			reset();
 		}
 	}
+
+
 	function generateList(){
+		var x = window.matchMedia("(max-width: 768px)")
+		if(!x.matches){
 		document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
+		} else{
+			document.getElementById("myTable").innerHTML = '<tr></tr>'
+		}
+		x.addListener(function(changed) {
+	    if(!changed.matches) {
+	       document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
+	       generateList();
+	    } else {
+	        document.getElementById("myTable").innerHTML = '<tr></tr>';
+	        generateList();
+	    }
+	});
+
+
 
 		tasks.forEach(function(task, index){
 			const table = document.getElementById("myTable");
@@ -45,6 +63,7 @@
 		    const cell2 = row.insertCell(1);
 		    const cell3 = row.insertCell(2);
 		    const cell4 = row.insertCell(3);
+		   
 
 		    //Calculate dates
 			const dateNow = Date.UTC(new Date(getDate()).getFullYear(), new Date(getDate()).getMonth(), new Date(getDate()).getDate());
@@ -64,10 +83,36 @@
 		    //Delete Task
 		    const btn = document.createElement("BUTTON");
 		    btn.addEventListener('click', function(){
-		    	deleteTask(task.id);
+		    	if(confirm('Are you sure you want to delete this task?')){
+		    		deleteTask(task.id);
+		    	}
 		    });    
 			const x = document.createTextNode("\u2716");      
-			btn.appendChild(x);  
+			btn.appendChild(x); 
+
+			//Remove blue color from task
+			const returnLost = document.createElement('BUTTON');
+			returnLost.addEventListener('click', function(){
+				table.rows[index + 1].classList.remove('selected');
+
+				task.isCorect = false;
+
+				if(task.isCorect === false){
+					checked.style.display = 'inline-block';
+					returnLost.setAttribute('style', 'display: none');
+
+					checked.style.color = 'blue';
+				}
+
+				if(day === 0){
+					table.rows[index + 1].classList.add('today');
+				}
+				saveTasks();
+		    });
+			const c = document.createTextNode('\u27AD');
+			returnLost.appendChild(c);
+			returnLost.setAttribute('style', 'display: none');
+
 
 			//Blue color, task done!    
 			const checked = document.createElement('BUTTON');
@@ -78,7 +123,13 @@
 				checked.style.display = 'none';
 				
 				if(task.isCorect === true) {
-					btn.setAttribute("style", "display: block;");
+					
+					returnLost.setAttribute('style', 'color: #ffa500');
+				}
+				if(day < 0){
+					checked.setAttribute("style", "display: none;");
+					returnLost.style.display = 'none';
+					btn.setAttribute('style', 'margin-left: 23px;');
 				}
 				saveTasks();
 			});
@@ -90,7 +141,13 @@
 				table.rows[index + 1].classList.remove('today');
 				table.rows[index + 1].classList.add('selected');
 				checked.setAttribute("style", "display: none;");
-			}            
+				returnLost.setAttribute('style', 'display: inline-block; color: #ffa500');
+			} 
+			if(task.isCorect === true && day < 0){
+				returnLost.style.display = 'none';
+				btn.setAttribute('style', 'margin-left: 23px;');
+			}          
+
 
 			//Push items from tasks in new row
 		    cell1.innerHTML = task.date;
@@ -98,6 +155,7 @@
 		    cell3.innerHTML = task.todoDate;
 		    cell4.appendChild(btn);
 		    cell4.appendChild(checked);
+		    cell4.appendChild(returnLost);
 
 		    saveTasks();
 		});   
@@ -150,7 +208,7 @@
 		} 
 		return today = yyyy+'/'+mm+'/'+dd+ ' ' + hours + ':' + minutes;
 	}
-
+		
 
 	// LocalStorage tasks
 	function saveTasks(){
