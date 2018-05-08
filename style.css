@@ -55,7 +55,7 @@
 		background-color: #189ccd;
 		transition: background-color 1s;
 	}
-	@media only screen and (max-width: 768px){
+	@media(max-width: 768px){
 		.title{
 			margin-left: 0;
 		}
@@ -166,14 +166,12 @@
 		background: #ffa500 !important;
 	}
 
-	@media (max-width: 768px)  {
+	@media (max-width: 768px){
 
-		/* Force table to not be like tables anymore */
 		table, thead, tbody, th, td, tr { 
 			display: block; 
 		}
 		
-		/* Hide table headers (but not display: none;, for accessibility) */
 		thead tr { 
 			position: absolute;
 			top: -9999px;

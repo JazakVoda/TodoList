@@ -36,11 +36,11 @@
 
 
 	function generateList(){
-		var x = window.matchMedia("(max-width: 768px)")
+		var x = window.matchMedia("(max-width: 768px)");
 		if(!x.matches){
 		document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
 		} else{
-			document.getElementById("myTable").innerHTML = '<tr></tr>'
+			document.getElementById("myTable").innerHTML = '<tr></tr>';
 		}
 		x.addListener(function(changed) {
 	    if(!changed.matches) {
