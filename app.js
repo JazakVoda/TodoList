@@ -37,22 +37,20 @@
 
 	function generateList(){
 		var x = window.matchMedia("(max-width: 768px)");
-		if(!x.matches){
-		document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
-		} else{
-			document.getElementById("myTable").innerHTML = '<tr></tr>';
-		}
+			if(!x.matches){
+			document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
+			} else{
+				document.getElementById("myTable").innerHTML = '<tr></tr>';
+			}
 		x.addListener(function(changed) {
-	    if(!changed.matches) {
-	       document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
-	       generateList();
-	    } else {
-	        document.getElementById("myTable").innerHTML = '<tr></tr>';
-	        generateList();
-	    }
-	});
-
-
+		    if(!changed.matches) {
+		       document.getElementById("myTable").innerHTML = '<th>Date/Time</th><th>Description</th><th>Date</th><th>Action</th>';
+		       generateList();
+		    } else {
+		        document.getElementById("myTable").innerHTML = '<tr></tr>';
+		        generateList();
+		    }
+		});
 
 		tasks.forEach(function(task, index){
 			const table = document.getElementById("myTable");
@@ -163,10 +161,7 @@
 
 	// Date sort
 	function sort(){
-		tasks.sort(function(a, b) {
-	    	// convert date object into number to resolve issue in typescript
-	    	return +new Date(a.todoDate) - +new Date(b.todoDate);
-		});
+		tasks.sort((a, b) => +new Date(a.todoDate) - +new Date(b.todoDate));
 	}
 
 	// Reset input field
@@ -178,9 +173,7 @@
 
 	// Delete selected task
 	function deleteTask(id){
-		tasks = tasks.filter(function(task){
-			return task.id !== id;
-		});
+		tasks = tasks.filter(task => task.id !== id);
 		generateList();
 		saveTasks();
 	}
@@ -218,7 +211,7 @@
 
 	// Get tasks from LocalStorage
 	function getTasks(){
-		const str = localStorage.getItem("tasks")
+		const str = localStorage.getItem("tasks");
 		tasks = JSON.parse(str);
 		if(!tasks){
 			tasks = [];
