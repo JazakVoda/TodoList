@@ -1,4 +1,9 @@
   
+  window.addEventListener('load', function(){
+    const load_screen = document.getElementById('load_screen');
+    document.body.removeChild(load_screen);
+  });
+
   const app = document.getElementById('root');
 
   const logo = document.createElement('img');
