@@ -421,7 +421,7 @@
 	@media (max-width: 768px){
 		button#weather{
 			width: 100%;
-			top: 30%;
+			top: 40%;
 			left: 0;
 			margin: 0;
 			padding-left: 0;
@@ -430,5 +430,49 @@
 			margin-top: 20%;
 			left: 0%;
 			width: 100%;
+		}
+	}
+
+	/* LIST */
+
+	button#list{
+		position: absolute;
+	    top: 15%;
+	    left: 44%;
+	    border-radius: 4px;
+		background-color: blue;
+		border: none;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 25px;
+		padding: 10px;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+	}
+	.list1{
+		margin-top: 10%;
+		margin-left: 43%;
+		text-align: left;
+	}
+	.list1 h2{
+		margin-left: 80px;
+	}
+	.list1 .date{
+		margin-left: 50px;
+	}
+	@media (max-width: 768px){
+		button#list{
+			width: 100%;
+			top: 40%;
+			left: 0;
+			margin: 0;
+			padding-left: 0;
+		}
+		#show-list{
+			margin-top: 100px;
+		}
+		.list1{
+			margin-left: 80px;
 		}
 	}
