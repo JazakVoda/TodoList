@@ -28,7 +28,7 @@
 	    color: black;
 	}
 	.topnav a.active {
-	    background-color: blue;
+	    background-color: #0080FF;
 	    color: white;
 	}
 	.nav-tabs{
@@ -381,7 +381,7 @@
 	    top: 15%;
 	    left: 44%;
 	    border-radius: 4px;
-		background-color: blue;
+		background-color: #0080FF;
 		border: none;
 		color: #FFFFFF;
 		text-align: center;
@@ -440,7 +440,7 @@
 	    top: 15%;
 	    left: 44%;
 	    border-radius: 4px;
-		background-color: blue;
+		background-color: #0080FF;
 		border: none;
 		color: #FFFFFF;
 		text-align: center;
