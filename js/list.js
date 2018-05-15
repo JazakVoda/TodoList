@@ -1,5 +1,6 @@
 
   document.getElementById('list').addEventListener('click', getExchangeList);
+  document.getElementById('go').addEventListener('click', calculate);
 
   function getExchangeList(){
     fetch('https://exchangeratesapi.io/api/latest')
