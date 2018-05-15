@@ -12,12 +12,12 @@
               <h2>${data.base}</h2>
               <p class="date">${data.date}<p>
               <div class="flags">
-              <p><img src="flags/rs.png" width=40px;> RSD = <span class="bold">${data.rates.RSD}</span></p>
-              <p><img src="flags/us.png" width=40px;> USD = <span class="bold">${data.rates.USD}</span></p>
-              <p><img src="flags/ch.png" width=40px;> CHF = <span class="bold">${data.rates.CHF}</span></p>
-              <p><img src="flags/gb.png" width=40px;> GBP = <span class="bold">${data.rates.GBP}</span></p>
-              <p><img src="flags/ca.png" width=40px;> CAD = <span class="bold">${data.rates.CAD}</span></p>
-              <p><img src="flags/hr.png" width=40px;> HRK = <span class="bold">${data.rates.HRK}</span></p>
+              <p><img src="flags/rs.png" width=40px;> RSD = <span class="bold">${Number(data.rates.RSD).toFixed(2)}</span></p>
+              <p><img src="flags/us.png" width=40px;> USD = <span class="bold">${Number(data.rates.USD).toFixed(2)}</span></p>
+              <p><img src="flags/ch.png" width=40px;> CHF = <span class="bold">${Number(data.rates.CHF).toFixed(2)}</span></p>
+              <p><img src="flags/gb.png" width=40px;> GBP = <span class="bold">${Number(data.rates.GBP).toFixed(2)}</span></p>
+              <p><img src="flags/ca.png" width=40px;> CAD = <span class="bold">${Number(data.rates.CAD).toFixed(2)}</span></p>
+              <p><img src="flags/hr.png" width=40px;> HRK = <span class="bold">${Number(data.rates.HRK).toFixed(2)}</span></p>
               </div>
             
             </div>
@@ -36,12 +36,12 @@
               <h2>${data.base}</h2>
               <p class="date">${data.date}<p>
               <div class="flags">
-              <p><img src="flags/rs.png" width=40px;> RSD = <span class="bold">${data.rates.RSD}</span></p>
-              <p><img src="flags/us.png" width=40px;> USD = <span class="bold">${data.rates.USD}</span></p>
-              <p><img src="flags/ch.png" width=40px;> CHF = <span class="bold">${data.rates.CHF}</span></p>
-              <p><img src="flags/gb.png" width=40px;> GBP = <span class="bold">${data.rates.GBP}</span></p>
-              <p><img src="flags/ca.png" width=40px;> CAD = <span class="bold">${data.rates.CAD}</span></p>
-              <p><img src="flags/hr.png" width=40px;> HRK = <span class="bold">${data.rates.HRK}</span></p>
+              <p><img src="flags/rs.png" width=40px;> RSD = <span class="bold">${Number(data.rates.RSD).toFixed(2)}</span></p>
+              <p><img src="flags/us.png" width=40px;> USD = <span class="bold">${Number(data.rates.USD).toFixed(2)}</span></p>
+              <p><img src="flags/ch.png" width=40px;> CHF = <span class="bold">${Number(data.rates.CHF).toFixed(2)}</span></p>
+              <p><img src="flags/gb.png" width=40px;> GBP = <span class="bold">${Number(data.rates.GBP).toFixed(2)}</span></p>
+              <p><img src="flags/ca.png" width=40px;> CAD = <span class="bold">${Number(data.rates.CAD).toFixed(2)}</span></p>
+              <p><img src="flags/hr.png" width=40px;> HRK = <span class="bold">${Number(data.rates.HRK).toFixed(2)}</span></p>
               </div>
             
             </div>

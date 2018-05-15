@@ -9,7 +9,7 @@
           output += `
             <div class=" card-body weather">
               <h2>${data.name}</h2>
-              <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" class="weather-img">
+              <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" class="weather-img">
               <p class="weather-description">${data.weather[0].description.toUpperCase()}<p>
 
               <p>Temp: <span class="bold">${data.main.temp}c</span></p>
@@ -19,5 +19,6 @@
             </div>
           `;
         document.getElementById('show-weather').innerHTML = output;
-    })
+    });
   }
+  
