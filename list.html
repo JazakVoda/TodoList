@@ -22,7 +22,7 @@
   	<div id="show-list"></div>
   	</div>
 
-  	<div class="convert">
+  	<!-- <div class="convert">
 		CONVERT: <input id="xxvalue" value="1.00" />
 		FROM:
 		<select id="xxfrom">
@@ -44,6 +44,21 @@
 		</select>
 		<input type="button" id="go" value="GO" onclick="myPrivateConverterMany();" />
 		<div id="xxrates"></div>
+	</div> -->
+
+	<div class="convert">
+		CONVERT: <input id="amount" value="10.00 EUR" />
+		TO:
+		<select id="select">
+			<option value="USD">USD - U.S. Dollar</option>
+			<option value="GBP">GBP - British Pound</option>
+			<option value="CHF">CHF - Swiss franc</option>
+			<option value="EUR">EUR - Euro</option>
+			<option value="CAD">CAD - Canadian Dollar</option>
+			<option value="JPY">JPY - Japanese Yen</option>
+		</select>
+		<input type="button" id="go" value="GO" onclick="calculate();" />
+		<input type="text" id="result" value="=">
 	</div>
 
 
