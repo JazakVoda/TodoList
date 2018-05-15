@@ -434,11 +434,13 @@
 	}
 
 	/* LIST */
+	.list-page{
+	
+	    margin-top: 20px;
+	    margin-left: 44%;
+	}
 
 	button#list{
-		position: absolute;
-	    top: 15%;
-	    left: 44%;
 	    border-radius: 4px;
 		background-color: #0080FF;
 		border: none;
@@ -451,28 +453,59 @@
 		margin: 5px;
 	}
 	.list1{
-		margin-top: 10%;
-		margin-left: 43%;
+		margin-top: 2%;
+		margin-left: 2%;
 		text-align: left;
 	}
 	.list1 h2{
-		margin-left: 80px;
+		margin-left: 40px;
 	}
 	.list1 .date{
-		margin-left: 50px;
+		margin-left: 10px;
 	}
 	@media (max-width: 768px){
+		.list-page{
+			left: 25px;
+		}
 		button#list{
-			width: 100%;
-			top: 40%;
-			left: 0;
-			margin: 0;
-			padding-left: 0;
+			margin-top: 50px;
+			margin-left: -60px;
 		}
 		#show-list{
-			margin-top: 100px;
+			margin-top: 0;
 		}
 		.list1{
-			margin-left: 80px;
+			margin-left: -50px;
+		}
+		.convert{
+			margin-left: 0 !important;
+			padding: 50px;
+		}
+		div#xxrates{
+			margin-left: 20px !important;
+		}
+		.convert #go{
+			width: 50%;
+			margin-left: 55px !important;
 		}
 	}
+	.convert{
+		margin-left: 20%;
+
+	}
+	div#xxrates{
+		margin-left: 30%;
+	}
+	.convert #go{
+	 	border-radius: 4px;
+		background-color: #0080FF;
+		border: none;
+		color: #FFFFFF;
+		text-align: center;
+		padding: 1px 15px;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;	
+	}
+	
+	

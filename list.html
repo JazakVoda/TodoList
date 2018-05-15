@@ -16,12 +16,39 @@
 	  		<li><a class="active" href="list.html">Exchange</a></li>
   		</ul>
 	</div>
-	
-	<!-- <div id="load_screen"><div id="loading"><div id="loader"></div></div></div> -->
 
+	<div class="list-page">
 	<button class="button" id="list">Exchange List</button>
   	<div id="show-list"></div>
+  	</div>
 
+  	<div class="convert">
+		CONVERT: <input id="xxvalue" value="1.00" />
+		FROM:
+		<select id="xxfrom">
+			<option value="EUR">EUR - Euro</option>
+			<option  value="USD">USD - U.S. Dollar</option>
+			<option value="CHF">CHF - Swiss franc</option>
+			<option value="GBP">GBP - British Pound</option>
+			<option value="CAD">CAD - Canadian Dollar</option>
+			<option value="JPY">JPY - Japanese Yen</option>
+		</select>
+		TO:
+		<select id="xxto">
+			<option value="USD">USD - U.S. Dollar</option>
+			<option value="GBP">GBP - British Pound</option>
+			<option value="CHF">CHF - Swiss franc</option>
+			<option value="EUR">EUR - Euro</option>
+			<option value="CAD">CAD - Canadian Dollar</option>
+			<option value="JPY">JPY - Japanese Yen</option>
+		</select>
+		<input type="button" id="go" value="GO" onclick="myPrivateConverterMany();" />
+		<div id="xxrates"></div>
+	</div>
+
+
+
+	<script type="text/javascript" src="http://currencyconverter.55uk.net/currency_converter_json.js"></script>
 	<script type="text/javascript" src="js/list.js"></script>
 </body>
 </html>
